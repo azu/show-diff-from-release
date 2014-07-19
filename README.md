@@ -2,7 +2,7 @@
 
 This Greasemonkey script show diff link in Release Page.
 
-![img](http://take.ms/hXQpT)
+![img](http://take.ms/W11lR)
 
 ## Installation
 
