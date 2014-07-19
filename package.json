@@ -1,0 +1,31 @@
+{
+    "name": "show-diff-from-release",
+    "description": "show diff between versions.",
+    "version": "0.0.1",
+    "homepage": "https://github.com/azu/show-diff-from-release/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/azu/show-diff-from-release.git"
+    },
+    "main": "index.js",
+    "scripts": {
+        "build": "browserify index.js -o `git config greasemonkey.file || echo show-diff-from-release.user.js`",
+        "watch": "watchify index.js -o `git config greasemonkey.file || echo show-diff-from-release.user.js`",
+        "test": "mocha test/*.js"
+    },
+    "directories": {
+        "test": "test/"
+    },
+    "author": "azu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/azu/show-diff-from-release/issues"
+    },
+    "dependencies": {
+        "github-release-dom": "git://github.com/azu/github-release-dom.git"
+    },
+    "devDependencies": {
+        "browserify": "^4.2.1",
+        "watchify": "^0.10.2"
+    }
+}

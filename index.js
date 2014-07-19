@@ -8,7 +8,15 @@
 // ==/UserScript==
 
 var api = require("./lib/github-api");
+var dom = require("./lib/github-dom");
 var ghObject = require("github-release-dom")(location.href);
-api.getReleasesList(ghObject, function (error, object) {
-
+api.getReleasesList(ghObject, function (error, tagList) {
+    if (error) {
+        return console.error(error);
+    }
+    try{
+        dom.addDiffList(ghObject, tagList);
+    }catch(error){
+        console.error(error);
+    }
 });
