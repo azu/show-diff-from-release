@@ -69,10 +69,11 @@ function markupTagList(ghObject, tagList) {
 
     return tagList.map(function (tagObject) {
         if (tagObject.name == currentTag) {
+            tagObject._current = true;
             reverse = true;
-            return;
+        } else {
+            tagObject._older = reverse;
         }
-        tagObject._older = reverse;
         return tagObject;
     }).filter(isNotUndefined);
 }
@@ -85,6 +86,11 @@ function buildListTag(ghObject, tagList) {
     var currentTagObject = getCurrentTagObject(ghObject, tagList);
     markedTagList.forEach(function (tagObject) {
         var li = document.createElement("li");
+        ul.appendChild(li);
+        if (tagObject._current) {
+            li.textContent = ">> " + tagObject.name;
+            return;
+        }
         var aTag = document.createElement("a");
         var compareSpan = document.createElement("span");
         compareSpan.className = "octicon octicon-git-compare";
@@ -97,7 +103,6 @@ function buildListTag(ghObject, tagList) {
             aTag.href = baseURL + currentTagObject.commit.sha + "..." + tagObject.commit.sha;
         }
         li.appendChild(aTag);
-        ul.appendChild(li);
     });
     return ul;
 }

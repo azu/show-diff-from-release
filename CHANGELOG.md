@@ -1,3 +1,11 @@
+### 0.0.3 (2014-07-20)
+
+
+#### Features
+
+* **dom:** add current tag in list ([8f6ebee6](https://github.com/azu/show-diff-from-release/commit/8f6ebee665d9781c716f7b980f49b3f346418ad2))
+
+
 ### 0.0.2 (2014-07-20)
 
 
