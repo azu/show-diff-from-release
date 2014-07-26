@@ -1,7 +1,7 @@
 {
   "name": "show-diff-from-release",
   "description": "show diff between versions.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/azu/show-diff-from-release/",
   "repository": {
     "type": "git",
